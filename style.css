@@ -1,0 +1,129 @@
+body {
+  background-color: #444444;
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+.message {
+  background-color: white;
+  border-radius: 40px;
+  box-shadow: inset 0 -6px 0 tomato;
+  color: rgb(17, 21, 82);
+  margin-top: 1rem;
+  padding: .5rem 2.5rem;
+}
+
+.message>h2>span {
+  color: tomato;
+}
+.message > xmp {
+  background-color: palegoldenrod;
+  padding: .5rem .5rem;
+}
+
+.pumpkin {
+  background-color: orange;
+  background-image:
+    /* "our left" <- eye */
+    radial-gradient(ellipse, rgb(82, 38, 17) 60%, transparent 61%),
+    radial-gradient(ellipse, tomato 60%, transparent 61%),
+    /* "our right" -> eye */
+    radial-gradient(ellipse, rgb(82, 38, 17) 60%, transparent 61%),
+    radial-gradient(ellipse, tomato 60%, transparent 61%),
+    /* Mouth */
+    linear-gradient(to left, tomato 8px, orange 8px),
+    linear-gradient(to left, tomato 8px, orange 8px),
+    /*light */
+    radial-gradient(ellipse, white 30%, yellow 50%, transparent 70%),
+    /* teeth */
+    radial-gradient(ellipse at 50% 0, sienna 60%, transparent 61%),
+    radial-gradient(ellipse at 50% 0, tomato 60%, transparent 61%),
+    /* pumpkin lins */
+    radial-gradient(ellipse, orange 49%, darkorange 50%, darkorange 51%, orange 52%);
+
+  background-position:
+    /* Eyes */
+    30% 20%,
+    28% 20%,
+    70% 20%,
+    72% 20%,
+    /* Mouth */
+    40% 88.5%,
+    60% 68.6%,
+    50% 85%,
+    50% 90%,
+    50% 92%,
+    /* pumpkin lins */
+    50%, 50%;
+  background-repeat: no-repeat;
+  background-size:
+    /* Eyes */
+    50px 70px,
+    54px 70px,
+    50px 70px,
+    54px 70px,
+    /* Mouth */
+    30px 20px,
+    30px 30px,
+    40px 50px,
+    200px 80px,
+    216px 86px,
+    /* pumpkin lins */
+    100% 150%;
+
+  border-radius: 120px;
+  box-shadow: inset 20px 0 0 darkorange, inset -20px 0 0 darkorange;
+  height: 250px;
+  position: relative;
+  width: 300px;
+
+  animation: flicker 0.2s infinite ease;
+  animation-direction: alternate;
+}
+
+.pumpkin::before {
+  background-color: transparent;
+  border-top-left-radius: 80px;
+  border-left: 25px solid rosybrown;
+  border-top: 15px solid transparent;
+  content: '';
+  height: 200px;
+  left: 45%;
+  position: absolute;
+  top: -80px;
+  width: 200px;
+  z-index: -1;
+}
+
+.pumpkin::after {
+  background-color: seagreen;
+  border-radius: 0 90% 0;
+  content: '';
+  height: 40px;
+  left: 35%;
+  position: absolute;
+  top: -60px;
+  width: 40px;
+  z-index: -2;
+}
+
+@keyframes flicker {
+
+  to {
+    background-size:
+      /* Eyes */
+      50px 70px,
+      54px 70px,
+      50px 70px,
+      54px 70px,
+      /* Mouth */
+      30px 20px,
+      30px 30px,
+      35px 55px,
+      200px 80px,
+      216px 86px,
+      /* pumpkin lins */
+      100% 150%;
+  }
+}
